@@ -2,7 +2,7 @@
 
 I play in my own active directory lab a lot. I love being able to execute something and see the results instantly, this approach has enabled me to discover loads of techniques.
 
-I wanted to share some of these results and as such have documented the findings.
+I wanted to share some of these results and as such will document some of these findings.
 
 These should be considered experimental and the results are highly likely to differ depending on the testing environment.
 
