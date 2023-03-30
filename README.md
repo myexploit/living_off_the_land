@@ -20,6 +20,7 @@ For more information on how I build my lab please see https://github.com/myexplo
 Free Trials
 
 Server 2022 - https://info.microsoft.com/ww-landing-windows-server-2022.html
+
 Windows 11 - https://www.microsoft.com/software-download/windows11
 
 Prebuilt Windows 11 VM (but I think these are now a messy solution) - https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/
