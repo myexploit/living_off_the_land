@@ -1,0 +1,39 @@
+Port 445
+
+Complete Syntax:
+
+(New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(objectClass=computer))")).FindAll() | ForEach-Object {if ((Test-NetConnection -ComputerName $_.Properties.name[0] -Port 445 -WarningAction SilentlyContinue).TcpTestSucceeded) {Write-Host $_.Properties.name[0] -ForegroundColor Green}}
+
+Result:
+
+PS C:\Windows\system32> (New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(objectClass=computer))")).FindAll() | ForEach-Object {if ((Test-NetConnection -ComputerName $_.Properties.name[0] -Port 445 -WarningAction SilentlyContinue).TcpTestSucceeded) {Write-Host $_.Properties.name[0] -ForegroundColor Green}}
+WIN-CH4HJ7UU7Q5
+LAB_WIN11_1
+LAB-WIN11-2
+
+
+ 
+Port 445 but only Windows 11 hosts
+
+The DirectorySearcher filter been modified to only search for computers with an operating system that contains the string "Windows 11".
+
+Complete Syntax:
+
+(New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(objectClass=computer)(operatingSystem=*Windows 11*))")).FindAll() | ForEach-Object {if ((Test-NetConnection -ComputerName $_.Properties.name[0] -Port 445 -WarningAction SilentlyContinue).TcpTestSucceeded) {Write-Host $_.Properties.name[0] -ForegroundColor Green}}
+
+Result:
+
+PS C:\Windows\system32> (New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(objectClass=computer)(operatingSystem=*Windows 11*))")).FindAll() | ForEach-Object {if ((Test-NetConnection -ComputerName $_.Properties.name[0] -Port 445 -WarningAction SilentlyContinue).TcpTestSucceeded) {Write-Host $_.Properties.name[0] -ForegroundColor Green}}
+LAB_WIN11_1
+LAB-WIN11-2
+
+Only match operatingSystem=*Windows Server
+
+Complete Syntax:
+
+(New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(objectClass=computer)(operatingSystem=*Windows Server*))")).FindAll() | ForEach-Object {if ((Test-NetConnection -ComputerName $_.Properties.name[0] -Port 445 -WarningAction SilentlyContinue).TcpTestSucceeded) {Write-Host $_.Properties.name[0] -ForegroundColor Green}}
+
+Result:
+
+PS C:\Windows\system32> (New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(objectClass=computer)(operatingSystem=*Windows Server*))")).FindAll() | ForEach-Object {if ((Test-NetConnection -ComputerName $_.Properties.name[0] -Port 445 -WarningAction SilentlyContinue).TcpTestSucceeded) {Write-Host $_.Properties.name[0] -ForegroundColor Green}}
+WIN-CH4HJ7UU7Q5
