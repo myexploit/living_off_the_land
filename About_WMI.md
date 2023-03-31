@@ -6,7 +6,7 @@ WMI provides a wide range of functionality, including the ability to retrieve sy
 
 Overall, WMI is a powerful technology that enables system administrators to manage and monitor Windows-based systems in a standardized and efficient manner.
 
-Combing WMI with PowerShell
+## Combing WMI with PowerShell
 
 PowerShell is a powerful command-line shell and scripting language that can be used to interact with WMI on Windows-based computers. PowerShell provides several cmdlets and modules that enable administrators to query WMI, retrieve information, and perform various management tasks.
 
@@ -15,11 +15,11 @@ Here are some examples of how to use WMI with PowerShell:
 Retrieving system information from the local host:
 
 Syntax:
-
+```
 Get-WmiObject -Class Win32_OperatingSystem
-
+```
 Result:
-
+```
 PS C:\Users\yepyepyep> Get-WmiObject -Class Win32_OperatingSystem
 
 SystemDirectory : C:\WINDOWS\system32
@@ -28,20 +28,20 @@ BuildNumber     : 22621
 RegisteredUser  : yepyepyep@myexploitland.com
 SerialNumber    : 00220-007-Redacted-1234M
 Version         : 10.0.22621
-
+```
 Querying for specific information on the local host:
 
 Syntax:
-
+```
 Get-WmiObject -Class Win32_Processor | Select-Object Name, Manufacturer, MaxClockSpeed
-
+```
 Result:
-
+```
 PS C:\Users\yepyepyep> Get-WmiObject -Class Win32_Processor | Select-Object Name, Manufacturer, MaxClockSpeed
 
 Name                                      Manufacturer MaxClockSpeed
 ----                                      ------------ -------------
 Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz GenuineIntel          2496
-
+```
 
 
