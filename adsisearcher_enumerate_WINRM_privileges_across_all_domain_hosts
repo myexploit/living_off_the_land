@@ -1,0 +1,14 @@
+Complete Syntax:
+
+([adsisearcher]"(&(objectCategory=computer)(objectClass=computer))").FindAll() | ForEach-Object {Test-NetConnection -ComputerName $_.Properties.name -Port 5985 -ErrorAction SilentlyContinue | Where-Object {$_.TcpTestSucceeded -eq $true} | Select-Object ComputerName}
+
+Result:
+
+PS C:\Windows\system32> ([adsisearcher]"(&(objectCategory=computer)(objectClass=computer))").FindAll() | ForEach-Object {Test-NetConnection -ComputerName $_.Properties.name -Port 5985 -ErrorAction SilentlyContinue | Where-Object {$_.TcpTestSucceeded -eq $true} | Select-Object ComputerName}
+
+WARNING: TCP connect to (fe80::5615:5a87:8d00:a170%5 : 5985) failed
+WARNING: TCP connect to (192.168.68.113 : 5985) failed
+ComputerName
+------------
+WIN-CH4HJ7UU7Q5
+LAB_WIN11_1
