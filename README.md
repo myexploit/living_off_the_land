@@ -11,16 +11,14 @@ All these shared samples were created by me, using tooling built into the Window
 
 
 
-Build your own AD lab
+## Build your own AD lab
 
 I strongly encourage that all infrastructure testers including Red / Purple / Blue Team members should build their own active directory lab, which consists of at least one Windows server, and two Windows 10 / 11 hosts.
 
 For more information on how I build my lab please see https://github.com/myexploit/LAB/blob/master/Hack_Lab_Domain which documents setting up the test domain that I use.
 
-Free Trials
+## Free Trials
 
-Server 2022 - https://info.microsoft.com/ww-landing-windows-server-2022.html
-
-Windows 11 - https://www.microsoft.com/software-download/windows11
-
-Prebuilt Windows 11 VM (but I think these are now a messy solution) - https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/
+- Server 2022 - https://info.microsoft.com/ww-landing-windows-server-2022.html
+- Windows 11 - https://www.microsoft.com/software-download/windows11
+- Prebuilt Windows 11 VM (but I think these are now a messy solution) - https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/
