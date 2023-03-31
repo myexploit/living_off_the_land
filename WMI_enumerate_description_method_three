@@ -1,0 +1,19 @@
+This is the best, it only returns accounts with a description filed that’s been filled in.
+
+Complete Syntax:
+
+Get-WmiObject -Class win32_useraccount -Filter "LocalAccount=False AND Description != ''" | Select-Object Name, AccountType, Disabled, Description
+
+Result:
+
+PS C:\Users\User1> Get-WmiObject -Class win32_useraccount -Filter "LocalAccount=False AND Description != ''" | Select-Object Name, AccountType, Disabled, Description
+
+Name          AccountType Disabled Description
+----          ----------- -------- -----------
+Administrator         512    False Built-in account for administering the computer/domain
+Guest                 512     True Built-in account for guest access to the computer/domain
+krbtgt                512     True Key Distribution Center Service Account
+d.atkinson            512    False User Password Summer123
+
+
+PS C:\Users\User1>
