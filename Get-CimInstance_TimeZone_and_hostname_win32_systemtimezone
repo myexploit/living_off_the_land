@@ -1,0 +1,11 @@
+Complete Syntax:
+
+Get-CimInstance -ClassName Win32_SystemTimeZone | Format-Table -AutoSize
+
+Result:
+
+PS C:\Users\User1> Get-CimInstance -ClassName Win32_SystemTimeZone | Format-Table -AutoSize
+
+Element                                     Setting                                             PSComputerName
+-------                                     -------                                             --------------
+Win32_ComputerSystem (Name = "LAB-WIN11-2") Win32_TimeZone (StandardName = "GMT Standard Time")
