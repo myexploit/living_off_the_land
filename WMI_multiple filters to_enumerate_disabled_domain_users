@@ -1,8 +1,9 @@
-
 Complete Syntax:
+
 Get-WmiObject -Class win32_useraccount -Filter “Disabled=True AND LocalAccount=False” | Select-Object Name, AccountType, Domain
 
 Result:
+
 PS C:\Users\User1> Get-WmiObject -Class win32_useraccount -Filter “Disabled=True AND LocalAccount=False” | Select-Object Name, AccountType, Domain
 
 Name   AccountType Domain
@@ -12,6 +13,7 @@ krbtgt         512 HACKLAB
 
 
 To return more information:
+
 PS C:\Users\User1> Get-WmiObject -Class win32_useraccount -Filter “Disabled=True AND LocalAccount=False” | Select-Object Name, AccountType, Domain, Description, SID
 
 Name        : Guest
