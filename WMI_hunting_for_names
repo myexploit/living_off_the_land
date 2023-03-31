@@ -1,0 +1,43 @@
+Hunting for domain names which contain SVC in the sam account name.
+
+Complete Syntax:
+
+Get-WmiObject -Class win32_useraccount -Filter "LocalAccount=False AND Name LIKE '%SVC%'"
+
+Result:
+
+PS C:\Users\User1> Get-WmiObject -Class win32_useraccount -Filter "LocalAccount=False AND Name LIKE '%SVC%'"
+
+
+AccountType : 512
+Caption     : HACKLAB\svc_afds
+Domain      : HACKLAB
+SID         : S-1-5-21-2616623822-1553658618-2628931692-1212
+FullName    :
+Name        : svc_afds
+
+AccountType : 512
+Caption     : HACKLAB\svc_test
+Domain      : HACKLAB
+SID         : S-1-5-21-2616623822-1553658618-2628931692-1213
+FullName    :
+Name        : svc_test
+
+AccountType : 512
+Caption     : HACKLAB\svc_mssql1
+Domain      : HACKLAB
+SID         : S-1-5-21-2616623822-1553658618-2628931692-1214
+FullName    :
+Name        : svc_mssql1
+
+Hunting for accounts that contain jame in the sam account name.
+
+PS C:\Users\User1> Get-WmiObject -Class win32_useraccount -Filter "LocalAccount=False AND Name LIKE '%jame%'"
+
+
+AccountType : 512
+Caption     : HACKLAB\l.james
+Domain      : HACKLAB
+SID         : S-1-5-21-2616623822-1553658618-2628931692-1196
+FullName    :
+Name        : l.james
