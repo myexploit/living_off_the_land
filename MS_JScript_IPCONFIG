@@ -1,0 +1,43 @@
+This code creates an instance of the WScript.Shell object, which provides access to the Windows command shell. The Exec method of the WScript.Shell object is used to execute the ipconfig command.
+
+The StdOut and StdErr properties of the WshScriptExec object returned by the Exec method are used to capture the output and error streams of the command. The output is stored in the stdout variable, and any error messages are stored
+
+Complete Syntax:
+
+var shell = WScript.CreateObject('WScript.Shell');
+var exec = shell.Exec('ipconfig');
+var stdout = '';
+var stderr = '';
+
+while (!exec.StdOut.AtEndOfStream) {
+    stdout += exec.StdOut.ReadLine() + '\n';
+}
+
+while (!exec.StdErr.AtEndOfStream) {
+    stderr += exec.StdErr.ReadLine() + '\n';
+}
+
+if (stderr) {
+    WScript.Echo('Error executing ipconfig: ' + stderr);
+} else {
+    WScript.Echo(stdout);
+}
+
+Result:
+
+PS C:\Users\User1\Documents> cscript.exe .\Test1.js
+Microsoft (R) Windows Script Host Version 5.812
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::eda2:cd55:404e:75cd%5
+   IPv4 Address. . . . . . . . . . . : 192.168.68.116
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::e6c3:2aff:fe0e:97d0%5
+                                       192.168.68.1
