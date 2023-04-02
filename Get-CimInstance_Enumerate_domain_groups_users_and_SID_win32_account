@@ -1,0 +1,203 @@
+Complete Syntax:
+
+Get-CimInstance -ClassName Win32_Account | Format-Table -AutoSize
+
+Result:
+
+PS C:\Users\User1> Get-CimInstance -ClassName Win32_Account | Format-Table -AutoSize
+
+Caption                                         Domain      Name                                    SID
+-------                                         ------      ----                                    ---
+LAB-WIN11-2\Everyone                            LAB-WIN11-2 Everyone                                S-1-1-0
+LAB-WIN11-2\LOCAL                               LAB-WIN11-2 LOCAL                                   S-1-2-0
+LAB-WIN11-2\CREATOR OWNER                       LAB-WIN11-2 CREATOR OWNER                           S-1-3-0
+LAB-WIN11-2\CREATOR GROUP                       LAB-WIN11-2 CREATOR GROUP                           S-1-3-1
+LAB-WIN11-2\CREATOR OWNER SERVER                LAB-WIN11-2 CREATOR OWNER SERVER                    S-1-3-2
+LAB-WIN11-2\CREATOR GROUP SERVER                LAB-WIN11-2 CREATOR GROUP SERVER                    S-1-3-3
+LAB-WIN11-2\OWNER RIGHTS                        LAB-WIN11-2 OWNER RIGHTS                            S-1-3-4
+LAB-WIN11-2\DIALUP                              LAB-WIN11-2 DIALUP                                  S-1-5-1
+LAB-WIN11-2\NETWORK                             LAB-WIN11-2 NETWORK                                 S-1-5-2
+LAB-WIN11-2\BATCH                               LAB-WIN11-2 BATCH                                   S-1-5-3
+LAB-WIN11-2\INTERACTIVE                         LAB-WIN11-2 INTERACTIVE                             S-1-5-4
+LAB-WIN11-2\SERVICE                             LAB-WIN11-2 SERVICE                                 S-1-5-6
+LAB-WIN11-2\ANONYMOUS LOGON                     LAB-WIN11-2 ANONYMOUS LOGON                         S-1-5-7
+LAB-WIN11-2\PROXY                               LAB-WIN11-2 PROXY                                   S-1-5-8
+LAB-WIN11-2\SYSTEM                              LAB-WIN11-2 SYSTEM                                  S-1-5-18
+LAB-WIN11-2\ENTERPRISE DOMAIN CONTROLLERS       LAB-WIN11-2 ENTERPRISE DOMAIN CONTROLLERS           S-1-5-9
+LAB-WIN11-2\SELF                                LAB-WIN11-2 SELF                                    S-1-5-10
+LAB-WIN11-2\Authenticated Users                 LAB-WIN11-2 Authenticated Users                     S-1-5-11
+LAB-WIN11-2\RESTRICTED                          LAB-WIN11-2 RESTRICTED                              S-1-5-12
+LAB-WIN11-2\TERMINAL SERVER USER                LAB-WIN11-2 TERMINAL SERVER USER                    S-1-5-13
+LAB-WIN11-2\REMOTE INTERACTIVE LOGON            LAB-WIN11-2 REMOTE INTERACTIVE LOGON                S-1-5-14
+LAB-WIN11-2\IUSR                                LAB-WIN11-2 IUSR                                    S-1-5-17
+LAB-WIN11-2\LOCAL SERVICE                       LAB-WIN11-2 LOCAL SERVICE                           S-1-5-19
+LAB-WIN11-2\NETWORK SERVICE                     LAB-WIN11-2 NETWORK SERVICE                         S-1-5-20
+LAB-WIN11-2\BUILTIN                             LAB-WIN11-2 BUILTIN                                 S-1-5-32
+LAB-WIN11-2\Access Control Assistance Operators LAB-WIN11-2 Access Control Assistance Operators     S-1-5-32-579
+LAB-WIN11-2\Administrators                      LAB-WIN11-2 Administrators                          S-1-5-32-544
+LAB-WIN11-2\Backup Operators                    LAB-WIN11-2 Backup Operators                        S-1-5-32-551
+LAB-WIN11-2\Cryptographic Operators             LAB-WIN11-2 Cryptographic Operators                 S-1-5-32-569
+LAB-WIN11-2\Device Owners                       LAB-WIN11-2 Device Owners                           S-1-5-32-583
+LAB-WIN11-2\Distributed COM Users               LAB-WIN11-2 Distributed COM Users                   S-1-5-32-562
+LAB-WIN11-2\Event Log Readers                   LAB-WIN11-2 Event Log Readers                       S-1-5-32-573
+LAB-WIN11-2\Guests                              LAB-WIN11-2 Guests                                  S-1-5-32-546
+LAB-WIN11-2\Hyper-V Administrators              LAB-WIN11-2 Hyper-V Administrators                  S-1-5-32-578
+LAB-WIN11-2\IIS_IUSRS                           LAB-WIN11-2 IIS_IUSRS                               S-1-5-32-568
+LAB-WIN11-2\Network Configuration Operators     LAB-WIN11-2 Network Configuration Operators         S-1-5-32-556
+LAB-WIN11-2\Performance Log Users               LAB-WIN11-2 Performance Log Users                   S-1-5-32-559
+LAB-WIN11-2\Performance Monitor Users           LAB-WIN11-2 Performance Monitor Users               S-1-5-32-558
+LAB-WIN11-2\Power Users                         LAB-WIN11-2 Power Users                             S-1-5-32-547
+LAB-WIN11-2\Remote Desktop Users                LAB-WIN11-2 Remote Desktop Users                    S-1-5-32-555
+LAB-WIN11-2\Remote Management Users             LAB-WIN11-2 Remote Management Users                 S-1-5-32-580
+LAB-WIN11-2\Replicator                          LAB-WIN11-2 Replicator                              S-1-5-32-552
+LAB-WIN11-2\System Managed Accounts Group       LAB-WIN11-2 System Managed Accounts Group           S-1-5-32-581
+LAB-WIN11-2\Users                               LAB-WIN11-2 Users                                   S-1-5-32-545
+HACKLAB\Cert Publishers                         HACKLAB     Cert Publishers                         S-1-5-21-2616623822-1553658618-2628931692-517
+HACKLAB\RAS and IAS Servers                     HACKLAB     RAS and IAS Servers                     S-1-5-21-2616623822-1553658618-2628931692-553
+HACKLAB\Allowed RODC Password Replication Group HACKLAB     Allowed RODC Password Replication Group S-1-5-21-2616623822-1553658618-2628931692-571
+HACKLAB\Denied RODC Password Replication Group  HACKLAB     Denied RODC Password Replication Group  S-1-5-21-2616623822-1553658618-2628931692-572
+HACKLAB\DnsAdmins                               HACKLAB     DnsAdmins                               S-1-5-21-2616623822-1553658618-2628931692-1101
+HACKLAB\accounts                                HACKLAB     accounts                                S-1-5-21-2616623822-1553658618-2628931692-1105
+HACKLAB\administration                          HACKLAB     administration                          S-1-5-21-2616623822-1553658618-2628931692-1104
+HACKLAB\Cloneable Domain Controllers            HACKLAB     Cloneable Domain Controllers            S-1-5-21-2616623822-1553658618-2628931692-522
+HACKLAB\DnsUpdateProxy                          HACKLAB     DnsUpdateProxy                          S-1-5-21-2616623822-1553658618-2628931692-1102
+HACKLAB\Domain Admins                           HACKLAB     Domain Admins                           S-1-5-21-2616623822-1553658618-2628931692-512
+HACKLAB\Domain Computers                        HACKLAB     Domain Computers                        S-1-5-21-2616623822-1553658618-2628931692-515
+HACKLAB\Domain Controllers                      HACKLAB     Domain Controllers                      S-1-5-21-2616623822-1553658618-2628931692-516
+HACKLAB\Domain Guests                           HACKLAB     Domain Guests                           S-1-5-21-2616623822-1553658618-2628931692-514
+HACKLAB\Domain Users                            HACKLAB     Domain Users                            S-1-5-21-2616623822-1553658618-2628931692-513
+HACKLAB\Enterprise Admins                       HACKLAB     Enterprise Admins                       S-1-5-21-2616623822-1553658618-2628931692-519
+HACKLAB\Enterprise Key Admins                   HACKLAB     Enterprise Key Admins                   S-1-5-21-2616623822-1553658618-2628931692-527
+HACKLAB\Enterprise Read-only Domain Controllers HACKLAB     Enterprise Read-only Domain Controllers S-1-5-21-2616623822-1553658618-2628931692-498
+HACKLAB\Group Policy Creator Owners             HACKLAB     Group Policy Creator Owners             S-1-5-21-2616623822-1553658618-2628931692-520
+HACKLAB\help_desk                               HACKLAB     help_desk                               S-1-5-21-2616623822-1553658618-2628931692-1106
+HACKLAB\Key Admins                              HACKLAB     Key Admins                              S-1-5-21-2616623822-1553658618-2628931692-526
+HACKLAB\Protected Users                         HACKLAB     Protected Users                         S-1-5-21-2616623822-1553658618-2628931692-525
+HACKLAB\RDP                                     HACKLAB     RDP                                     S-1-5-21-2616623822-1553658618-2628931692-1108
+HACKLAB\Read-only Domain Controllers            HACKLAB     Read-only Domain Controllers            S-1-5-21-2616623822-1553658618-2628931692-521
+HACKLAB\sales                                   HACKLAB     sales                                   S-1-5-21-2616623822-1553658618-2628931692-1103
+HACKLAB\Schema Admins                           HACKLAB     Schema Admins                           S-1-5-21-2616623822-1553658618-2628931692-518
+HACKLAB\support                                 HACKLAB     support                                 S-1-5-21-2616623822-1553658618-2628931692-1107
+LAB-WIN11-2\Administrator                       LAB-WIN11-2 Administrator                           S-1-5-21-989316335-961067246-357250816-500
+LAB-WIN11-2\DefaultAccount                      LAB-WIN11-2 DefaultAccount                          S-1-5-21-989316335-961067246-357250816-503
+LAB-WIN11-2\Guest                               LAB-WIN11-2 Guest                                   S-1-5-21-989316335-961067246-357250816-501
+LAB-WIN11-2\ieuser                              LAB-WIN11-2 ieuser                                  S-1-5-21-989316335-961067246-357250816-1001
+LAB-WIN11-2\WDAGUtilityAccount                  LAB-WIN11-2 WDAGUtilityAccount                      S-1-5-21-989316335-961067246-357250816-504
+HACKLAB\Administrator                           HACKLAB     Administrator                           S-1-5-21-2616623822-1553658618-2628931692-500
+HACKLAB\Guest                                   HACKLAB     Guest                                   S-1-5-21-2616623822-1553658618-2628931692-501
+HACKLAB\krbtgt                                  HACKLAB     krbtgt                                  S-1-5-21-2616623822-1553658618-2628931692-502
+HACKLAB\n.collins                               HACKLAB     n.collins                               S-1-5-21-2616623822-1553658618-2628931692-1109
+HACKLAB\o.davidson                              HACKLAB     o.davidson                              S-1-5-21-2616623822-1553658618-2628931692-1110
+HACKLAB\p.davies                                HACKLAB     p.davies                                S-1-5-21-2616623822-1553658618-2628931692-1111
+HACKLAB\q.dawson                                HACKLAB     q.dawson                                S-1-5-21-2616623822-1553658618-2628931692-1112
+HACKLAB\u.dixon                                 HACKLAB     u.dixon                                 S-1-5-21-2616623822-1553658618-2628931692-1113
+HACKLAB\r.edwards                               HACKLAB     r.edwards                               S-1-5-21-2616623822-1553658618-2628931692-1114
+HACKLAB\s.elliot                                HACKLAB     s.elliot                                S-1-5-21-2616623822-1553658618-2628931692-1115
+HACKLAB\t.evans                                 HACKLAB     t.evans                                 S-1-5-21-2616623822-1553658618-2628931692-1116
+HACKLAB\u.fisher                                HACKLAB     u.fisher                                S-1-5-21-2616623822-1553658618-2628931692-1117
+HACKLAB\v.fletcher                              HACKLAB     v.fletcher                              S-1-5-21-2616623822-1553658618-2628931692-1118
+HACKLAB\w.ford                                  HACKLAB     w.ford                                  S-1-5-21-2616623822-1553658618-2628931692-1119
+HACKLAB\x.foster                                HACKLAB     x.foster                                S-1-5-21-2616623822-1553658618-2628931692-1120
+HACKLAB\y.fox                                   HACKLAB     y.fox                                   S-1-5-21-2616623822-1553658618-2628931692-1121
+HACKLAB\z.gibson                                HACKLAB     z.gibson                                S-1-5-21-2616623822-1553658618-2628931692-1122
+HACKLAB\a.graham                                HACKLAB     a.graham                                S-1-5-21-2616623822-1553658618-2628931692-1123
+HACKLAB\b.grant                                 HACKLAB     b.grant                                 S-1-5-21-2616623822-1553658618-2628931692-1124
+HACKLAB\c.gray                                  HACKLAB     c.gray                                  S-1-5-21-2616623822-1553658618-2628931692-1125
+HACKLAB\d.green                                 HACKLAB     d.green                                 S-1-5-21-2616623822-1553658618-2628931692-1126
+HACKLAB\m.jenkins                               HACKLAB     m.jenkins                               S-1-5-21-2616623822-1553658618-2628931692-1127
+HACKLAB\n.johnson                               HACKLAB     n.johnson                               S-1-5-21-2616623822-1553658618-2628931692-1128
+HACKLAB\o.jones                                 HACKLAB     o.jones                                 S-1-5-21-2616623822-1553658618-2628931692-1129
+HACKLAB\g.white                                 HACKLAB     g.white                                 S-1-5-21-2616623822-1553658618-2628931692-1130
+HACKLAB\h.yalden                                HACKLAB     h.yalden                                S-1-5-21-2616623822-1553658618-2628931692-1131
+HACKLAB\i.yarbury                               HACKLAB     i.yarbury                               S-1-5-21-2616623822-1553658618-2628931692-1132
+HACKLAB\j.yardley                               HACKLAB     j.yardley                               S-1-5-21-2616623822-1553658618-2628931692-1133
+HACKLAB\z.mcdonald                              HACKLAB     z.mcdonald                              S-1-5-21-2616623822-1553658618-2628931692-1134
+HACKLAB\a.murphy                                HACKLAB     a.murphy                                S-1-5-21-2616623822-1553658618-2628931692-1135
+HACKLAB\b.natt                                  HACKLAB     b.natt                                  S-1-5-21-2616623822-1553658618-2628931692-1136
+HACKLAB\c.nelson                                HACKLAB     c.nelson                                S-1-5-21-2616623822-1553658618-2628931692-1137
+HACKLAB\d.nightingale                           HACKLAB     d.nightingale                           S-1-5-21-2616623822-1553658618-2628931692-1138
+HACKLAB\e.nixon                                 HACKLAB     e.nixon                                 S-1-5-21-2616623822-1553658618-2628931692-1139
+HACKLAB\f.nutter                                HACKLAB     f.nutter                                S-1-5-21-2616623822-1553658618-2628931692-1140
+HACKLAB\p.kelly                                 HACKLAB     p.kelly                                 S-1-5-21-2616623822-1553658618-2628931692-1141
+HACKLAB\q.kennedy                               HACKLAB     q.kennedy                               S-1-5-21-2616623822-1553658618-2628931692-1142
+HACKLAB\u.king                                  HACKLAB     u.king                                  S-1-5-21-2616623822-1553658618-2628931692-1143
+HACKLAB\r.knight                                HACKLAB     r.knight                                S-1-5-21-2616623822-1553658618-2628931692-1144
+HACKLAB\s.lawrence                              HACKLAB     s.lawrence                              S-1-5-21-2616623822-1553658618-2628931692-1145
+HACKLAB\t.lee                                   HACKLAB     t.lee                                   S-1-5-21-2616623822-1553658618-2628931692-1146
+HACKLAB\u.lewis                                 HACKLAB     u.lewis                                 S-1-5-21-2616623822-1553658618-2628931692-1147
+HACKLAB\v.lloyd                                 HACKLAB     v.lloyd                                 S-1-5-21-2616623822-1553658618-2628931692-1148
+HACKLAB\w.marshall                              HACKLAB     w.marshall                              S-1-5-21-2616623822-1553658618-2628931692-1149
+HACKLAB\x.martin                                HACKLAB     x.martin                                S-1-5-21-2616623822-1553658618-2628931692-1150
+HACKLAB\y.mason                                 HACKLAB     y.mason                                 S-1-5-21-2616623822-1553658618-2628931692-1151
+HACKLAB\g.dell                                  HACKLAB     g.dell                                  S-1-5-21-2616623822-1553658618-2628931692-1152
+HACKLAB\h.osborne                               HACKLAB     h.osborne                               S-1-5-21-2616623822-1553658618-2628931692-1153
+HACKLAB\i.owen                                  HACKLAB     i.owen                                  S-1-5-21-2616623822-1553658618-2628931692-1154
+HACKLAB\j.oxley                                 HACKLAB     j.oxley                                 S-1-5-21-2616623822-1553658618-2628931692-1155
+HACKLAB\k.page                                  HACKLAB     k.page                                  S-1-5-21-2616623822-1553658618-2628931692-1156
+HACKLAB\l.painter                               HACKLAB     l.painter                               S-1-5-21-2616623822-1553658618-2628931692-1157
+HACKLAB\m.palmer                                HACKLAB     m.palmer                                S-1-5-21-2616623822-1553658618-2628931692-1158
+HACKLAB\n.pastor                                HACKLAB     n.pastor                                S-1-5-21-2616623822-1553658618-2628931692-1159
+HACKLAB\o.peterson                              HACKLAB     o.peterson                              S-1-5-21-2616623822-1553658618-2628931692-1160
+HACKLAB\p.quill                                 HACKLAB     p.quill                                 S-1-5-21-2616623822-1553658618-2628931692-1161
+HACKLAB\q.quimby                                HACKLAB     q.quimby                                S-1-5-21-2616623822-1553658618-2628931692-1162
+HACKLAB\u.quintrell                             HACKLAB     u.quintrell                             S-1-5-21-2616623822-1553658618-2628931692-1163
+HACKLAB\r.ramsey                                HACKLAB     r.ramsey                                S-1-5-21-2616623822-1553658618-2628931692-1164
+HACKLAB\s.ratliff                               HACKLAB     s.ratliff                               S-1-5-21-2616623822-1553658618-2628931692-1165
+HACKLAB\t.richards                              HACKLAB     t.richards                              S-1-5-21-2616623822-1553658618-2628931692-1166
+HACKLAB\u.roberts                               HACKLAB     u.roberts                               S-1-5-21-2616623822-1553658618-2628931692-1167
+HACKLAB\v.robinson                              HACKLAB     v.robinson                              S-1-5-21-2616623822-1553658618-2628931692-1168
+HACKLAB\w.scott                                 HACKLAB     w.scott                                 S-1-5-21-2616623822-1553658618-2628931692-1169
+HACKLAB\x.simpson                               HACKLAB     x.simpson                               S-1-5-21-2616623822-1553658618-2628931692-1170
+HACKLAB\y.smith                                 HACKLAB     y.smith                                 S-1-5-21-2616623822-1553658618-2628931692-1171
+HACKLAB\z.stewart                               HACKLAB     z.stewart                               S-1-5-21-2616623822-1553658618-2628931692-1172
+HACKLAB\a.taylor                                HACKLAB     a.taylor                                S-1-5-21-2616623822-1553658618-2628931692-1173
+HACKLAB\b.turner                                HACKLAB     b.turner                                S-1-5-21-2616623822-1553658618-2628931692-1174
+HACKLAB\c.walsh                                 HACKLAB     c.walsh                                 S-1-5-21-2616623822-1553658618-2628931692-1175
+HACKLAB\d.ward                                  HACKLAB     d.ward                                  S-1-5-21-2616623822-1553658618-2628931692-1176
+HACKLAB\e.webb                                  HACKLAB     e.webb                                  S-1-5-21-2616623822-1553658618-2628931692-1177
+HACKLAB\f.west                                  HACKLAB     f.west                                  S-1-5-21-2616623822-1553658618-2628931692-1178
+HACKLAB\d.atkinson                              HACKLAB     d.atkinson                              S-1-5-21-2616623822-1553658618-2628931692-1179
+HACKLAB\e.bailey                                HACKLAB     e.bailey                                S-1-5-21-2616623822-1553658618-2628931692-1180
+HACKLAB\f.baker                                 HACKLAB     f.baker                                 S-1-5-21-2616623822-1553658618-2628931692-1181
+HACKLAB\g.ball                                  HACKLAB     g.ball                                  S-1-5-21-2616623822-1553658618-2628931692-1182
+HACKLAB\h.bell                                  HACKLAB     h.bell                                  S-1-5-21-2616623822-1553658618-2628931692-1183
+HACKLAB\i.brown                                 HACKLAB     i.brown                                 S-1-5-21-2616623822-1553658618-2628931692-1184
+HACKLAB\j.burton                                HACKLAB     j.burton                                S-1-5-21-2616623822-1553658618-2628931692-1185
+HACKLAB\k.carter                                HACKLAB     k.carter                                S-1-5-21-2616623822-1553658618-2628931692-1186
+HACKLAB\l.clarke                                HACKLAB     l.clarke                                S-1-5-21-2616623822-1553658618-2628931692-1187
+HACKLAB\m.cole                                  HACKLAB     m.cole                                  S-1-5-21-2616623822-1553658618-2628931692-1188
+HACKLAB\e.griffiths                             HACKLAB     e.griffiths                             S-1-5-21-2616623822-1553658618-2628931692-1189
+HACKLAB\f.hall                                  HACKLAB     f.hall                                  S-1-5-21-2616623822-1553658618-2628931692-1190
+HACKLAB\g.hamilton                              HACKLAB     g.hamilton                              S-1-5-21-2616623822-1553658618-2628931692-1191
+HACKLAB\h.harris                                HACKLAB     h.harris                                S-1-5-21-2616623822-1553658618-2628931692-1192
+HACKLAB\i.harvey                                HACKLAB     i.harvey                                S-1-5-21-2616623822-1553658618-2628931692-1193
+HACKLAB\j.hill                                  HACKLAB     j.hill                                  S-1-5-21-2616623822-1553658618-2628931692-1194
+HACKLAB\k.jackson                               HACKLAB     k.jackson                               S-1-5-21-2616623822-1553658618-2628931692-1195
+HACKLAB\l.james                                 HACKLAB     l.james                                 S-1-5-21-2616623822-1553658618-2628931692-1196
+HACKLAB\k.yarrow                                HACKLAB     k.yarrow                                S-1-5-21-2616623822-1553658618-2628931692-1197
+HACKLAB\l.yates                                 HACKLAB     l.yates                                 S-1-5-21-2616623822-1553658618-2628931692-1198
+HACKLAB\m.young                                 HACKLAB     m.young                                 S-1-5-21-2616623822-1553658618-2628931692-1199
+HACKLAB\n.zachary                               HACKLAB     n.zachary                               S-1-5-21-2616623822-1553658618-2628931692-1200
+HACKLAB\o.zelly                                 HACKLAB     o.zelly                                 S-1-5-21-2616623822-1553658618-2628931692-1201
+HACKLAB\p.zinc                                  HACKLAB     p.zinc                                  S-1-5-21-2616623822-1553658618-2628931692-1202
+HACKLAB\q.zouch                                 HACKLAB     q.zouch                                 S-1-5-21-2616623822-1553658618-2628931692-1203
+HACKLAB\a.adams                                 HACKLAB     a.adams                                 S-1-5-21-2616623822-1553658618-2628931692-1204
+HACKLAB\b.allen                                 HACKLAB     b.allen                                 S-1-5-21-2616623822-1553658618-2628931692-1205
+HACKLAB\c.armstrong                             HACKLAB     c.armstrong                             S-1-5-21-2616623822-1553658618-2628931692-1206
+HACKLAB\adm.adams                               HACKLAB     adm.adams                               S-1-5-21-2616623822-1553658618-2628931692-1207
+HACKLAB\adm.smith                               HACKLAB     adm.smith                               S-1-5-21-2616623822-1553658618-2628931692-1208
+HACKLAB\adm.stewart                             HACKLAB     adm.stewart                             S-1-5-21-2616623822-1553658618-2628931692-1209
+HACKLAB\adm.natt                                HACKLAB     adm.natt                                S-1-5-21-2616623822-1553658618-2628931692-1210
+HACKLAB\adm.nelson                              HACKLAB     adm.nelson                              S-1-5-21-2616623822-1553658618-2628931692-1211
+HACKLAB\svc_afds                                HACKLAB     svc_afds                                S-1-5-21-2616623822-1553658618-2628931692-1212
+HACKLAB\svc_test                                HACKLAB     svc_test                                S-1-5-21-2616623822-1553658618-2628931692-1213
+HACKLAB\svc_mssql1                              HACKLAB     svc_mssql1                              S-1-5-21-2616623822-1553658618-2628931692-1214
+HACKLAB\svc_mssql2                              HACKLAB     svc_mssql2                              S-1-5-21-2616623822-1553658618-2628931692-1215
+HACKLAB\svc_lab                                 HACKLAB     svc_lab                                 S-1-5-21-2616623822-1553658618-2628931692-1216
+HACKLAB\svc_admin                               HACKLAB     svc_admin                               S-1-5-21-2616623822-1553658618-2628931692-1217
+HACKLAB\DA1                                     HACKLAB     DA1                                     S-1-5-21-2616623822-1553658618-2628931692-1251
+HACKLAB\user1                                   HACKLAB     user1                                   S-1-5-21-2616623822-1553658618-2628931692-1252
+HACKLAB\user2                                   HACKLAB     user2                                   S-1-5-21-2616623822-1553658618-2628931692-1255
+HACKLAB\user3                                   HACKLAB     user3                                   S-1-5-21-2616623822-1553658618-2628931692-1257
+HACKLAB\test2                                   HACKLAB     test2                                   S-1-5-21-2616623822-1553658618-2628931692-1259
+HACKLAB\user4                                   HACKLAB     user4                                   S-1-5-21-2616623822-1553658618-2628931692-1260 

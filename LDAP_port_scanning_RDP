@@ -1,0 +1,25 @@
+Port 3389
+
+Complete Syntax
+
+$searcher = New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(objectClass=computer))")
+$searcher.PageSize = 1000
+$results = $searcher.FindAll()
+
+foreach ($result in $results) {
+    $computerName = $result.Properties["name"][0]
+
+    $testConnection = Test-NetConnection -ComputerName $computerName -Port 3389 -WarningAction SilentlyContinue
+    if ($testConnection.TcpTestSucceeded) {
+        Write-Host $computerName -ForegroundColor Green
+    }
+}
+
+One-Liner
+
+(New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(objectClass=computer))")).FindAll() | ForEach-Object {if ((Test-NetConnection -ComputerName $_.Properties.name[0] -Port 3389 -WarningAction SilentlyContinue).TcpTestSucceeded) {Write-Host $_.Properties.name[0] -ForegroundColor Green}}
+
+Result
+
+PS C:\Windows\system32> (New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(objectClass=computer))")).FindAll() | ForEach-Object {if ((Test-NetConnection -ComputerName $_.Properties.name[0] -Port 3389 -WarningAction SilentlyContinue).TcpTestSucceeded) {Write-Host $_.Properties.name[0] -ForegroundColor Green}}
+WIN-CH4HJ7UU7Q5

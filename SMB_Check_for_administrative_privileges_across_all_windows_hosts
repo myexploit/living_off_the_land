@@ -1,0 +1,56 @@
+Check for administrative privileges against all windows hosts
+
+This is one I'm excited about, best thing I have scripted so far, it prompts you for creds, then enumerates all windows hosts in the domain, and then finally tries the credentials you submitted to see if they have admin privs on any of the enumerated hosts, basically crackmapexec in PS running native on the host.
+
+
+Complete Syntax:
+
+$computers = @((New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(operatingSystem=Windows*))")).FindAll() | ForEach-Object { $_.Properties.name[0] })
+
+$username = Read-Host -Prompt "Enter your username"
+$password = Read-Host -Prompt "Enter your password" -AsSecureString
+$credential = New-Object System.Management.Automation.PSCredential ($username, $password)
+
+$computers | ForEach-Object {
+    $computer = $_
+    $scriptBlock = {
+        Try {
+            $smb = Get-SmbSession
+            Write-Host "SMB service is accessible on $($env:COMPUTERNAME)" -ForegroundColor Green
+        } Catch {
+            $error_message = $_.Exception.Message
+            if ($error_message -notlike "*The user name or password is incorrect.*") {
+                Write-Host $error_message -ForegroundColor Red
+            }
+        }
+    }
+    Invoke-Command -ComputerName $computer -Credential $credential -ScriptBlock $scriptBlock -ErrorAction SilentlyContinue
+}
+
+
+Result:
+
+PS C:\Windows\system32> $computers = @((New-Object DirectoryServices.DirectorySearcher("(&(objectCategory=computer)(operatingSystem=Windows*))")).FindAll() | ForEach-Object { $_.Properties.name[0] })
+PS C:\Windows\system32>
+PS C:\Windows\system32> $username = Read-Host -Prompt "Enter your username"
+Enter your username: user1
+PS C:\Windows\system32> $password = Read-Host -Prompt "Enter your password" -AsSecureString
+Enter your password: *********
+PS C:\Windows\system32> $credential = New-Object System.Management.Automation.PSCredential ($username, $password)
+PS C:\Windows\system32>
+PS C:\Windows\system32> $computers | ForEach-Object {
+>>     $computer = $_
+>>     $scriptBlock = {
+>>         Try {
+>>             $smb = Get-SmbSession
+>>             Write-Host "SMB service is accessible on $($env:COMPUTERNAME)" -ForegroundColor Green
+>>         } Catch {
+>>             $error_message = $_.Exception.Message
+>>             if ($error_message -notlike "*The user name or password is incorrect.*") {
+>>                 Write-Host $error_message -ForegroundColor Red
+>>             }
+>>         }
+>>     }
+>>     Invoke-Command -ComputerName $computer -Credential $credential -ScriptBlock $scriptBlock -ErrorAction SilentlyContinue
+>> }
+SMB service is accessible on LAB_WIN11_1
