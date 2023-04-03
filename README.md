@@ -243,8 +243,9 @@ user2              HACKLAB\user2                  512         S-1-5-21-261662382
 user3              HACKLAB\user3                  512         S-1-5-21-2616623822-1553658618-2628931692-1257 HACKLAB
 test2              HACKLAB\test2                  512         S-1-5-21-2616623822-1553658618-2628931692-1259 HACKLAB
 user4              HACKLAB\user4                  512         S-1-5-21-2616623822-1553658618-2628931692-1260 HACKLAB
-
+```
 ### Enumerate_domain_users_win32_userdesktop
+
 Complete Syntax:
 ```
 Get-CimInstance -ClassName Win32_UserDesktop | Format-Table -AutoSize > Win32_UserDesktop.txt
