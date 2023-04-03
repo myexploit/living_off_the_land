@@ -1,3 +1,0 @@
-WMI Get-CimInstance
-
-The "Get-CimInstance" cmdlet is used to retrieve information about a particular class of objects in the Windows Management Instrumentation (WMI) repository. It is part of the PowerShell CIM (Common Information Model) cmdlets, which provide a standardized way to manage Windows systems using CIM. 
