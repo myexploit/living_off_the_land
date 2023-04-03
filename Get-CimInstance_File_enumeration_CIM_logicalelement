@@ -1,9 +1,0 @@
-Records every file on a local host, looks to detail every aspect of the machine, drivers, IP address everything, produces a large output file size!!
-
-Complete Syntax:
-
-CIM_LogicalElement
-
-Result:
-
-Get-CimInstance -ClassName CIM_LogicalElement | Format-Table -AutoSize
