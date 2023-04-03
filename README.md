@@ -381,7 +381,7 @@ Win32_UserAccount (Name = "user2", Domain = "HACKLAB")                  Win32_De
 Win32_UserAccount (Name = "user3", Domain = "HACKLAB")                  Win32_Desktop (Name = ".DEFAULT")
 Win32_UserAccount (Name = "test2", Domain = "HACKLAB")                  Win32_Desktop (Name = ".DEFAULT")
 Win32_UserAccount (Name = "user4", Domain = "HACKLAB")                  Win32_Desktop (Name = ".DEFAULT")
-
+```
 ### Enumerate_domain_users_win32_userindomain
 Complete Syntax:
 ```
