@@ -2334,6 +2334,192 @@ The ADSI Searcher provides a means to programmatically access and manipulate Act
 
 The ADSI Searcher is often used in automation and scripting scenarios, such as automating user provisioning, account management, and other administrative tasks. It provides a powerful way to manage and automate large-scale Active Directory environments.
 
+**Find domain accounts (persons) whose lastlogon timestamp is within the last 31 days.**#
+
+Thanks to https://twitter.com/SecEventsPen for this oneliner
+
+```
+$days=(Get-Date).AddDays(-31).ToFileTime()
+$searcher=[adsisearcher]"(&(objectCategory=person)(lastlogon>=$days))"
+$searcher.PageSize = 1000
+$searcher.FindAll() | ForEach {$_.Properties}
+```
+
+Result:
+```
+PS C:\Users\g.white> $days=(Get-Date).AddDays(-31).ToFileTime()
+$searcher=[adsisearcher]"(&(objectCategory=person)(lastlogon>=$days))"
+$searcher.PageSize = 1000
+$searcher.FindAll() | ForEach {$_.Properties} 
+
+Name                           Value                                                                                                                                                                      
+----                           -----                                                                                                                                                                      
+logoncount                     {31}                                                                                                                                                                       
+codepage                       {0}                                                                                                                                                                        
+objectcategory                 {CN=Person,CN=Schema,CN=Configuration,DC=hacklab,DC=local}                                                                                                                 
+description                    {Built-in account for administering the computer/domain}                                                                                                                   
+usnchanged                     {53356}                                                                                                                                                                    
+instancetype                   {4}                                                                                                                                                                        
+name                           {Administrator}                                                                                                                                                            
+badpasswordtime                {133644000781104249}                                                                                                                                                       
+pwdlastset                     {133576465213511264}                                                                                                                                                       
+objectclass                    {top, person, organizationalPerson, user}                                                                                                                                  
+badpwdcount                    {1}                                                                                                                                                                        
+samaccounttype                 {805306368}                                                                                                                                                                
+lastlogontimestamp             {133642997707275960}                                                                                                                                                       
+usncreated                     {8196}                                                                                                                                                                     
+objectguid                     {18 22 41 84 182 248 45 70 176 209 48 250 138 54 223 175}                                                                                                                  
+memberof                       {CN=Group Policy Creator Owners,CN=Users,DC=hacklab,DC=local, CN=Domain Admins,CN=Users,DC=hacklab,DC=local, CN=Enterprise Admins,CN=Users,DC=hacklab,DC=local, CN=Schem...
+whencreated                    {15/04/2024 10:59:05}                                                                                                                                                      
+adspath                        {LDAP://CN=Administrator,CN=Users,DC=hacklab,DC=local}                                                                                                                     
+useraccountcontrol             {66048}                                                                                                                                                                    
+cn                             {Administrator}                                                                                                                                                            
+countrycode                    {0}                                                                                                                                                                        
+primarygroupid                 {513}                                                                                                                                                                      
+whenchanged                    {01/07/2024 09:29:30}                                                                                                                                                      
+dscorepropagationdata          {15/04/2024 11:17:09, 15/04/2024 11:17:09, 15/04/2024 11:02:00, 01/01/1601 18:12:16}                                                                                       
+lastlogon                      {133643991228523356}                                                                                                                                                       
+distinguishedname              {CN=Administrator,CN=Users,DC=hacklab,DC=local}                                                                                                                            
+admincount                     {1}                                                                                                                                                                        
+iscriticalsystemobject         {True}                                                                                                                                                                     
+samaccountname                 {Administrator}                                                                                                                                                            
+objectsid                      {1 5 0 0 0 0 0 5 21 0 0 0 175 203 32 131 47 233 81 71 22 193 3 64 244 1 0 0}                                                                                               
+lastlogoff                     {0}                                                                                                                                                                        
+accountexpires                 {9223372036854775807}                                                                                                                                                      
+givenname                      {da1}                                                                                                                                                                      
+codepage                       {0}                                                                                                                                                                        
+objectcategory                 {CN=Person,CN=Schema,CN=Configuration,DC=hacklab,DC=local}                                                                                                                 
+dscorepropagationdata          {15/04/2024 12:17:09, 01/01/1601 00:00:00}                                                                                                                                 
+usnchanged                     {53401}                                                                                                                                                                    
+instancetype                   {4}                                                                                                                                                                        
+logoncount                     {16}                                                                                                                                                                       
+name                           {da1}                                                                                                                                                                      
+badpasswordtime                {133644000781729613}                                                                                                                                                       
+pwdlastset                     {133576546326600662}                                                                                                                                                       
+objectclass                    {top, person, organizationalPerson, user}                                                                                                                                  
+badpwdcount                    {1}                                                                                                                                                                        
+samaccounttype                 {805306368}                                                                                                                                                                
+lastlogontimestamp             {133643020831507840}                                                                                                                                                       
+usncreated                     {12782}                                                                                                                                                                    
+objectguid                     {197 85 132 16 117 150 156 77 175 95 32 49 0 162 85 102}                                                                                                                   
+memberof                       {CN=Domain Admins,CN=Users,DC=hacklab,DC=local}                                                                                                                            
+whencreated                    {15/04/2024 11:37:12}                                                                                                                                                      
+adspath                        {LDAP://CN=da1,CN=Users,DC=hacklab,DC=local}                                                                                                                               
+useraccountcontrol             {66048}                                                                                                                                                                    
+cn                             {da1}                                                                                                                                                                      
+countrycode                    {0}                                                                                                                                                                        
+primarygroupid                 {513}                                                                                                                                                                      
+whenchanged                    {01/07/2024 10:08:03}                                                                                                                                                      
+lastlogon                      {133643896061358993}                                                                                                                                                       
+distinguishedname              {CN=da1,CN=Users,DC=hacklab,DC=local}                                                                                                                                      
+admincount                     {1}                                                                                                                                                                        
+samaccountname                 {da1}                                                                                                                                                                      
+objectsid                      {1 5 0 0 0 0 0 5 21 0 0 0 175 203 32 131 47 233 81 71 22 193 3 64 79 4 0 0}                                                                                                
+lastlogoff                     {0}                                                                                                                                                                        
+displayname                    {da1}                                                                                                                                                                      
+accountexpires                 {9223372036854775807}                                                                                                                                                      
+userprincipalname              {da1@hacklab.local}                                                                                                                                                        
+givenname                      {User}                                                                                                                                                                     
+codepage                       {0}                                                                                                                                                                        
+objectcategory                 {CN=Person,CN=Schema,CN=Configuration,DC=hacklab,DC=local}                                                                                                                 
+dscorepropagationdata          {01/01/1601 00:00:00}                                                                                                                                                      
+usnchanged                     {55066}                                                                                                                                                                    
+instancetype                   {4}                                                                                                                                                                        
+logoncount                     {0}                                                                                                                                                                        
+name                           {m.marjtinez}                                                                                                                                                              
+badpasswordtime                {133643999601421644}                                                                                                                                                       
+pwdlastset                     {133576554680837059}                                                                                                                                                       
+objectclass                    {top, person, organizationalPerson, user}                                                                                                                                  
+badpwdcount                    {0}                                                                                                                                                                        
+samaccounttype                 {805306368}                                                                                                                                                                
+lastlogontimestamp             {133644000787226323}                                                                                                                                                       
+usncreated                     {13006}                                                                                                                                                                    
+sn                             {test}                                                                                                                                                                     
+objectguid                     {161 98 106 182 89 48 144 68 154 193 220 177 46 141 222 69}                                                                                                                
+whencreated                    {15/04/2024 11:51:07}                                                                                                                                                      
+adspath                        {LDAP://CN=m.marjtinez,OU=Accounts,OU=Head_Office,OU=Departments,DC=hacklab,DC=local}                                                                                      
+useraccountcontrol             {66048}                                                                                                                                                                    
+cn                             {m.marjtinez}                                                                                                                                                              
+countrycode                    {0}                                                                                                                                                                        
+primarygroupid                 {513}                                                                                                                                                                      
+whenchanged                    {02/07/2024 13:21:18}                                                                                                                                                      
+lastlogon                      {133644000787226323}                                                                                                                                                       
+distinguishedname              {CN=m.marjtinez,OU=Accounts,OU=Head_Office,OU=Departments,DC=hacklab,DC=local}                                                                                             
+samaccountname                 {m.marjtinez}                                                                                                                                                              
+objectsid                      {1 5 0 0 0 0 0 5 21 0 0 0 175 203 32 131 47 233 81 71 22 193 3 64 115 4 0 0}                                                                                               
+lastlogoff                     {0}                                                                                                                                                                        
+accountexpires                 {9223372036854775807}                                                                                                                                                      
+givenname                      {User}                                                                                                                                                                     
+codepage                       {0}                                                                                                                                                                        
+objectcategory                 {CN=Person,CN=Schema,CN=Configuration,DC=hacklab,DC=local}                                                                                                                 
+dscorepropagationdata          {01/01/1601 00:00:00}                                                                                                                                                      
+usnchanged                     {53510}                                                                                                                                                                    
+instancetype                   {4}                                                                                                                                                                        
+logoncount                     {44}                                                                                                                                                                       
+name                           {g.white}                                                                                                                                                                  
+badpasswordtime                {133644000824860004}                                                                                                                                                       
+pwdlastset                     {133622297427871693}                                                                                                                                                       
+msds-supportedencryptiontypes  {0}                                                                                                                                                                        
+objectclass                    {top, person, organizationalPerson, user}                                                                                                                                  
+badpwdcount                    {0}                                                                                                                                                                        
+samaccounttype                 {805306368}                                                                                                                                                                
+lastlogontimestamp             {133643005117555966}                                                                                                                                                       
+usncreated                     {14152}                                                                                                                                                                    
+sn                             {test}                                                                                                                                                                     
+objectguid                     {19 72 224 156 186 224 97 69 161 249 237 221 111 26 23 222}                                                                                                                
+whencreated                    {15/04/2024 11:53:09}                                                                                                                                                      
+adspath                        {LDAP://CN=g.white,OU=Administration,OU=Head_Office,OU=Departments,DC=hacklab,DC=local}                                                                                    
+useraccountcontrol             {66048}                                                                                                                                                                    
+cn                             {g.white}                                                                                                                                                                  
+countrycode                    {0}                                                                                                                                                                        
+primarygroupid                 {513}                                                                                                                                                                      
+whenchanged                    {02/07/2024 10:26:09}                                                                                                                                                      
+lastlogon                      {133646677037140426}                                                                                                                                                       
+distinguishedname              {CN=g.white,OU=Administration,OU=Head_Office,OU=Departments,DC=hacklab,DC=local}                                                                                           
+usercertificate                {48 130 6 22 48 130 4 254 160 3 2 1 2 2 19 28 0 0 0 10 235 178 161 131 135 50 49 188 0 0 0 0 0 10 48 13 6 9 42 134 72 134 247 13 1 1 11 5 0 48 85 49 21 48 19 6 10 9 146...
+samaccountname                 {g.white}                                                                                                                                                                  
+objectsid                      {1 5 0 0 0 0 0 5 21 0 0 0 175 203 32 131 47 233 81 71 22 193 3 64 50 5 0 0}                                                                                                
+lastlogoff                     {0}                                                                                                                                                                        
+accountexpires                 {9223372036854775807}                                                                                                                                                      
+givenname                      {User}                                                                                                                                                                     
+codepage                       {0}                                                                                                                                                                        
+objectcategory                 {CN=Person,CN=Schema,CN=Configuration,DC=hacklab,DC=local}                                                                                                                 
+dscorepropagationdata          {15/04/2024 12:17:09, 01/01/1601 00:00:00}                                                                                                                                 
+usnchanged                     {53413}                                                                                                                                                                    
+instancetype                   {4}                                                                                                                                                                        
+logoncount                     {2}                                                                                                                                                                        
+name                           {svc_admin}                                                                                                                                                                
+badpasswordtime                {133644000839852958}                                                                                                                                                       
+pwdlastset                     {133643024653851484}                                                                                                                                                       
+serviceprincipalname           {http/server1.hacklab.local:8087}                                                                                                                                          
+objectclass                    {top, person, organizationalPerson, user}                                                                                                                                  
+badpwdcount                    {1}                                                                                                                                                                        
+samaccounttype                 {805306368}                                                                                                                                                                
+lastlogontimestamp             {133643025027133023}                                                                                                                                                       
+usncreated                     {14706}                                                                                                                                                                    
+sn                             {test}                                                                                                                                                                     
+objectguid                     {102 92 105 80 49 170 251 77 190 128 239 89 18 27 23 149}                                                                                                                  
+memberof                       {CN=Domain Admins,CN=Users,DC=hacklab,DC=local}                                                                                                                            
+whencreated                    {15/04/2024 11:53:59}                                                                                                                                                      
+adspath                        {LDAP://CN=svc_admin,OU=Service_Accounts,OU=IT,OU=Departments,DC=hacklab,DC=local}                                                                                         
+useraccountcontrol             {66048}                                                                                                                                                                    
+cn                             {svc_admin}                                                                                                                                                                
+countrycode                    {0}                                                                                                                                                                        
+primarygroupid                 {513}                                                                                                                                                                      
+whenchanged                    {01/07/2024 10:15:02}                                                                                                                                                      
+lockouttime                    {0}                                                                                                                                                                        
+lastlogon                      {133643029219162306}                                                                                                                                                       
+distinguishedname              {CN=svc_admin,OU=Service_Accounts,OU=IT,OU=Departments,DC=hacklab,DC=local}                                                                                                
+msds-supportedencryptiontypes  {0}                                                                                                                                                                        
+admincount                     {1}                                                                                                                                                                        
+samaccountname                 {svc_admin}                                                                                                                                                                
+objectsid                      {1 5 0 0 0 0 0 5 21 0 0 0 175 203 32 131 47 233 81 71 22 193 3 64 137 5 0 0}                                                                                               
+lastlogoff                     {0}                                                                                                                                                                        
+accountexpires                 {9223372036854775807}   
+
+```
+
+
 ### Find where WinRM is enabled on all domain hosts
 ```
 ([adsisearcher]"(&(objectCategory=computer)(objectClass=computer))").FindAll() | ForEach-Object {Test-NetConnection -ComputerName $_.Properties.name -Port 5985 -ErrorAction SilentlyContinue | Where-Object {$_.TcpTestSucceeded -eq $true} | Select-Object ComputerName}
