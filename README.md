@@ -2334,7 +2334,7 @@ The ADSI Searcher provides a means to programmatically access and manipulate Act
 
 The ADSI Searcher is often used in automation and scripting scenarios, such as automating user provisioning, account management, and other administrative tasks. It provides a powerful way to manage and automate large-scale Active Directory environments.
 
-**Find domain accounts (persons) whose lastlogon timestamp is within the last 31 days.**#
+**Find domain accounts (persons) whose lastlogon timestamp is within the last 31 days.**
 
 Thanks to https://twitter.com/SecEventsPen for this oneliner
 
